@@ -32,5 +32,4 @@ class UploadForm extends Model
             return 'ошибка';
         }
     }
-
 }
