@@ -46,7 +46,8 @@ function initUpload(id)
             // Append the file name and file size
             tpl.find('p').text(data.files[0].name)
                 .append('<span class="size">' + formatFileSize(data.files[0].size) + '</span>')
-                .append('<span class="errors error"></span>');
+                .append('<span class="errors error"></span>')
+                .append('<span class="success" style="color:#090"></span>');
 
             // Add the HTML to the UL element
             data.context = tpl.appendTo(ul);
@@ -79,14 +80,20 @@ function initUpload(id)
 
                 if (response.errors)
                 {
-                    data.context.find('.errors').html(join(response.errors, '<br/>'));
+                    jErrors = response.errors;
+                    data.context.find('.errors').html(jErrors.join('<br/>'));
                 }
                 else if (response)
                 {
-                    data.context.fadeOut(function ()
+                    /*data.context.fadeOut(function ()
                     {
                         data.context.remove();
-                    });
+                    });*/
+
+                    if (response.success)
+                    {
+                        data.context.find('.success').html('success');
+                    }
 
                     if (callback && typeof window[callback] == 'function')
                     {

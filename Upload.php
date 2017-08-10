@@ -2,14 +2,14 @@
 
 namespace myext\upl;
 
-use myext\upl\models\UploadForm;
+use myext\upl\modules\uploads\models\UploadForm;
 use yii\web\UploadedFile;
 use Yii;
 
 /**
  * This is just an example.
  */
-class AutoloadExample extends \yii\base\Widget
+class Upload extends \yii\base\Widget
 {
     public function run()
     {

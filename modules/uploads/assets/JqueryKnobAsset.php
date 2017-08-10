@@ -1,6 +1,6 @@
 <?php
 
-namespace myext\upl\assets;
+namespace myext\upl\modules\uploads\assets;
 
 use yii\web\AssetBundle;
 

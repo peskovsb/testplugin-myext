@@ -5,9 +5,8 @@
 /* @var $model app\models\ContactForm */
 
 use yii\bootstrap\ActiveForm;
-use myext\upl\assets\UploadAsset;
 
-UploadAsset::register($this);
+\myext\upl\modules\uploads\assets\UploadAsset::register($this);
 ?>
 
 <div id="files-photo_id">
@@ -15,7 +14,7 @@ UploadAsset::register($this);
     </ul>
 </div>
 
-<div class="upload" id="upload-photo_id" data-route="/site/contact" data-callback="" data-object-id="1" data-field-id="4">
+<div class="upload" id="upload-photo_id" data-route="/uploads/search/manuf" data-callback="" data-object-id="1" data-field-id="4">
     <div class="drop">
         Перетащите изображение в эту область <a>или&nbsp;выберите с&nbsp;локального&nbsp;диска</a>
     </div>

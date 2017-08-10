@@ -1,6 +1,6 @@
 <?php
 
-namespace myext\upl\models;
+namespace myext\upl\modules\uploads\models;
 
 use yii\base\Model;
 use yii\web\UploadedFile;

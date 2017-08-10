@@ -1,12 +1,12 @@
 <?php
 
-namespace myext\upl\assets;
+namespace myext\upl\modules\uploads\assets;
 
 use yii\web\AssetBundle;
 
 class UploadAsset extends AssetBundle
 {
-    public $sourcePath = '@myext/upl/assets/upload';
+    public $sourcePath = '@myext/upl/modules/uploads/assets/upload';
 
     public $js = [
         'http://code.jquery.com/ui/1.12.1/jquery-ui.min.js',
@@ -21,6 +21,6 @@ class UploadAsset extends AssetBundle
 
     public $depends = [
         'app\assets\AppAsset',
-        'myext\upl\assets\JqueryKnobAsset',
+        'myext\upl\modules\uploads\assets\JqueryKnobAsset',
     ];
 }
