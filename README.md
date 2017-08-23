@@ -1,6 +1,6 @@
 My ext
 ======
-My ext
+My ext2
 
 Installation
 ------------
