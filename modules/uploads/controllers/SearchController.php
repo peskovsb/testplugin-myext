@@ -9,6 +9,7 @@ use lib\models\parts\SecondStep;*/
 use myext\upl\modules\uploads\models\UploadForm;
 use yii\web\HttpException;
 use yii;
+use yii\imagine\Image;
 
 /**
  * Контроллер отвечает за поиск через коробку DocParts
@@ -41,8 +42,15 @@ class SearchController extends yii\base\Controller
             $model->file = yii\web\UploadedFile::getInstance($model, 'file');
 
             if ($model->validate()) {
-                $path = Yii::$app->params['pathUploads'];
-                $model->file->saveAs( $path . $model->file);
+
+                $path_l = Yii::$app->params['pathUploads'] . '/l/';
+                $model->file->saveAs( $path_l . $model->file);
+
+                $path_s = Yii::$app->params['pathUploads'] . '/s/';
+
+                Image::thumbnail($path_l . $model->file->name, 500, 500)
+                    ->save($path_s . $model->file->name, ['quality' => 100]);
+
                 return [
                     'success' => true,
                     'src' => $model->file->name

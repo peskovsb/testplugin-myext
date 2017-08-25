@@ -96,7 +96,7 @@ function initUpload(id)
                     {
                         data.context.find('.success').html('success');
                         filesAdded.push(response.src);
-                        $('#uploads-src').val(JSON.stringify(filesAdded));
+                        $('#uploadform-src').val(JSON.stringify(filesAdded));
                     }
 
                     if (callback && typeof window[callback] == 'function')
