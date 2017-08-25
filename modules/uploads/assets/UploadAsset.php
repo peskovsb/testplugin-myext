@@ -13,6 +13,7 @@ class UploadAsset extends AssetBundle
         'js/jquery.iframe-transport.js',
         'js/jquery.fileupload.js',
         'js/upload.js',
+        'js/jquery.knob.min.js',
     ];
 
     public $css = [
@@ -20,7 +21,6 @@ class UploadAsset extends AssetBundle
     ];
 
     public $depends = [
-        'app\assets\AppAsset',
-        'myext\upl\modules\uploads\assets\JqueryKnobAsset',
+        'yii\web\YiiAsset',
     ];
 }
