@@ -43,7 +43,10 @@ class SearchController extends yii\base\Controller
             if ($model->validate()) {
                 $path = Yii::$app->params['pathUploads'];
                 $model->file->saveAs( $path . $model->file);
-                return ['success' => true];
+                return [
+                    'success' => true,
+                    'src' => $model->file->name
+                ];
             }else{
                 return ['errors' => $model->getErrors()['file']];
             }
