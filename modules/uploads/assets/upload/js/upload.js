@@ -3,8 +3,6 @@ function initUpload(id)
     var form_id = 'upload-form-' + id;
     var area_id = 'upload-' + id;
 
-    filesAdded = [];
-
     var route = $('#upload-' + id).attr('data-route');
     var callback = $('#upload-' + id).attr('data-callback');
 
@@ -95,8 +93,8 @@ function initUpload(id)
                     if (response.success)
                     {
                         data.context.find('.success').html('success');
-                        filesAdded.push(response.src);
-                        $('#uploadform-src').val(JSON.stringify(filesAdded));
+                        $('#uploadform-src').val(response.src);
+                        $('#upload-img').attr('src','/uploads/s/' + response.src);
                     }
 
                     if (callback && typeof window[callback] == 'function')
