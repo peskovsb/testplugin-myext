@@ -8,7 +8,8 @@ function initUpload(id)
 
     var form = $('<form id="' + form_id + '" method="post" action="' + route + '" enctype="multipart/form-data"><input type="file" name="UploadForm[file]" multiple /></form>');
 
-    form.appendTo($('#upload-forms'));
+    //form.appendTo($('#upload-forms'));
+    $('#upload-forms').html(form);
 
     var ul = $('#' + area_id + ' ul');
 
@@ -221,5 +222,3 @@ function deleteFileCallback(response, data)
         $('.smart-form input[name=update_time]').val(response.update_time);
     }
 }
-
-initUploadForms();

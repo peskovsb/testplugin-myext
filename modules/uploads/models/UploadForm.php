@@ -15,7 +15,7 @@ class UploadForm extends Model
         return [
             // username and password are both required
 
-            [['file'], 'file', 'extensions' => 'png, jpg',
+            [['file'], 'file', 'extensions' => 'png, jpg, gif',
                 'skipOnEmpty' => false]];
     }
 
